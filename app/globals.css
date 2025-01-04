@@ -7,9 +7,16 @@
   --foreground: #171717;
 }
 
-/* @media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: light) {
   :root {
-    --background: #0a0a0a;
+  --background: linear-gradient(40deg, #6C00A2, #001152); 
+    --foreground: #ededed;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+  --background: linear-gradient(40deg, #6C00A2, #001152); 
     --foreground: #ededed;
   }
 } */

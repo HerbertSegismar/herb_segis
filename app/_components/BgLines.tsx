@@ -17,7 +17,7 @@ export const BackgroundLines = ({
   return (
     <div
       className={cn(
-        "h-screen w-screen bg-gradient-to-b from-white to-neutral-100 dark:from-neutral-950 dark:to-neutral-800 relative flex items-center justify-center overflow-hidden -z-10",
+        "h-screen w-screen bg-gradient-to-b from-neutral-950 dark:to-blue-800 relative flex items-center justify-center overflow-hidden -z-10",
         className
       )}
     >
