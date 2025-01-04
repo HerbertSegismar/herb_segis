@@ -101,14 +101,15 @@ export default function Header() {
               initial="initial"
               animate="final"
               exit="exit"
-              className="absolute top-28 bg-black/50 border border-solid-2px border-black/20 rounded-xl w-28 h-64 md:w-[180px] md:h-[400px] mt-2 md:mt-10 right-4 text-yellow-100"
+              className="absolute top-28 bg-black/50 border border-solid-2px border-black/20 rounded-xl ~w-28/44 ~h-64/96 ~mt-2/10 right-4 text-yellow-100 flex flex-col"
             >
+              <div className="bg-[#FF9D23] ~w-2/6 ~h-2/6 rounded-full ~mt-2/4 ~ml-2/4" />
               <div className="flex flex-col items-center justify-center w-full h-full gap-4">
                 {pages.map((page) => (
                   <TransLink
                     key={page.name}
                     href={page.href}
-                    className={`text-xl md:text-3xl font-bold hover:text-[#FF9D23] transition-all duration-300 ease-in-out ${
+                    className={`~text-xl/3xl font-bold hover:text-[#FF9D23] transition-all duration-300 ease-in-out ${
                       pathname === page.href
                         ? "text-[#FF9D23]"
                         : "text-yellow-100"

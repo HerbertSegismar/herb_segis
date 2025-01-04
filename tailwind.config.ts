@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import fluid, { extract, screens, fontSize } from "fluid-tailwind";
 
 export default {
   content: [
@@ -7,7 +8,12 @@ export default {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens, // Tailwind's default screens, in `rem`
+    fontSize, // Tailwind's default font sizes, in `rem` (including line heights)
     extend: {
+      screens: {
+        xs: "20rem",
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
@@ -55,6 +61,11 @@ export default {
         },
       },
     },
+    extract,
   },
-  plugins: [],
+  plugins: [
+    fluid({
+      checkSC144: true, // default: true
+    }),
+  ],
 } satisfies Config;
