@@ -63,8 +63,8 @@ export default function Header() {
             <Image
               priority={true}
               src="/menu.svg"
-              width={30}
-              height={30}
+              width={25}
+              height={25}
               alt="menu"
               className={`${
                 openMenu
@@ -74,8 +74,8 @@ export default function Header() {
             />
             <Image
               src="/x.svg"
-              width={30}
-              height={30}
+              width={25}
+              height={25}
               alt="x"
               className={`${
                 openMenu
@@ -101,14 +101,14 @@ export default function Header() {
               initial="initial"
               animate="final"
               exit="exit"
-              className="absolute top-28 bg-black/20 border border-solid-2px border-black/20 rounded-xl w-48 md:w-[300px] h-[700px] mt-10 right-7 text-yellow-100"
+              className="absolute top-28 bg-black/50 border border-solid-2px border-black/20 rounded-xl w-28 h-64 md:w-[180px] md:h-[400px] mt-2 md:mt-10 right-4 text-yellow-100"
             >
               <div className="flex flex-col items-center justify-center w-full h-full gap-4">
                 {pages.map((page) => (
                   <TransLink
                     key={page.name}
                     href={page.href}
-                    className={`text-4xl font-bold hover:text-[#FF9D23] transition-all duration-300 ease-in-out ${
+                    className={`text-xl md:text-3xl font-bold hover:text-[#FF9D23] transition-all duration-300 ease-in-out ${
                       pathname === page.href
                         ? "text-[#FF9D23]"
                         : "text-yellow-100"

@@ -129,7 +129,7 @@ export const BackgroundGradientAnimation = ({
           isSafari ? "blur-2xl" : "[filter:url(#blurMe)_blur(40px)]"
         )}
       >
-        <div className="-top-[1200px] left-0 w-full h-full relative">
+        <div className="-top-[800px] md:-top-[1200px] left-0 w-full h-full relative">
           <div
             className={cn(
               `absolute [background:radial-gradient(circle_at_center,_var(--first-color)_0,_var(--first-color)_50%)_no-repeat]`,
