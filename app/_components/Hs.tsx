@@ -1,11 +1,15 @@
 import React from "react";
 
-type Props = { className?: string };
 
-export default function Hs({className}: Props) {
+type Props = {
+  className?: string;
+  onClick?: () => void;
+};
+
+export default function Hs({ className }: Props) {
   const color1 = "#FF9D23";
   const color2 = "#f7f9bf";
-  const color3 = "#F93827";
+  const color3 = "#D93827";
 
   return (
     <div className={className}>
@@ -13,16 +17,6 @@ export default function Hs({className}: Props) {
         width="100%"
         height="100%"
         viewBox="0 0 381 66"
-        version="1.1"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlnsXlink="http://www.w3.org/1999/xlink"
-        xmlSpace="preserve"
-        style={{
-          fillRule: "evenodd",
-          clipRule: "evenodd",
-          strokeLinejoin: "round",
-          strokeMiterlimit: 2,
-        }}
       >
         <path
           id="Dot"

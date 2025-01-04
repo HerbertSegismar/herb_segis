@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --background: #423a3a;
+  --background: linear-gradient(40deg, #6C00A2, #001152); 
   --foreground: #171717;
 }
 
@@ -18,4 +18,13 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  transition-property: opacity, background-color, filter;
+  transition-duration: 0.6s;
+  transition-timing-function: ease-in-out;
+}
+
+.page-transition {
+  opacity: 0;
+  background-color: black;
+  filter: blur(10px);
 }
