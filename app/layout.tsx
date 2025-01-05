@@ -11,7 +11,6 @@ import { Vortex2 } from './_components/Vortex2'
 import { useState } from "react";
 import { metadata } from './metadata';
 import SideBar from "./_components/SideBar";
-import { ClerkProvider } from "@clerk/nextjs";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -34,7 +33,7 @@ export default function RootLayout({
   };
 
   return (
-    //<ClerkProvider>
+  
       <html lang="en">
         <head>
           <title>{String(metadata.title ?? "")}</title>
@@ -68,6 +67,6 @@ export default function RootLayout({
           <SideBar handleBgChange={handleBgChange} />
         </body>
       </html>
-    //</ClerkProvider>
+    
   );
 }
