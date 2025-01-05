@@ -65,7 +65,7 @@ export default {
   },
   plugins: [
     fluid({
-      checkSC144: true, // default: true
+      checkSC144: false, // default: true
     }),
   ],
 } satisfies Config;

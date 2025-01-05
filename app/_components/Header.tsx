@@ -5,6 +5,12 @@ import Hs from "./Hs";
 import { TransLink } from "../_components/TransLink";
 import { AnimatePresence, motion } from "motion/react";
 import { usePathname } from "next/navigation";
+import {
+  SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from "@clerk/nextjs";
 
 export default function Header() {
   const [openMenu, setOpenMenu] = useState(false);
@@ -59,36 +65,46 @@ export default function Header() {
               className="hover:bg-black/30 p-4 rounded-lg hover:scale-110 transition-all duration-300 ease-in-out w-64 md:w-96"
             />
           </TransLink>
-          <div className="flex items-center justify-center h-[50px] w-[50px] right-8 group cursor-pointer relative transition-all duration-300 ease-in-out">
-            <Image
-              priority={true}
-              src="/menu.svg"
-              width={25}
-              height={25}
-              alt="menu"
-              className={`${
-                openMenu
-                  ? "hidden"
-                  : "group-hover:scale-110 transition-all duration-300 ease-in-out"
-              }`}
-            />
-            <Image
-              src="/x.svg"
-              width={25}
-              height={25}
-              alt="x"
-              className={`${
-                openMenu
-                  ? "group-hover:scale-110 transition-all duration-300 ease-in-out"
-                  : "hidden"
-              }`}
-            />
-            <button
-              onClick={() => {
-                handleMenu();
-              }}
-              className="z-50 absolute hidden w-16 h-16 rounded-md bg-[#FF9D23] group-hover:flex mix-blend-darken transition-all duration-300 ease-in-out"
-            />
+          <div className="flex items-center gap-10">
+            <div className="bg-yellow-100 ~w-14/20 ~h-6/8 flex items-center justify-center rounded-md hover:scale-110 transition-all duration-300 ease-in-out hover:bg-[#FF9D23] font-semibold text-black hover:text-slate-300">
+              <SignedOut>
+                <SignInButton />
+              </SignedOut>
+              <SignedIn>
+                <UserButton />
+              </SignedIn>
+            </div>
+            <div className="flex items-center justify-center h-[50px] w-[50px] right-8 group cursor-pointer relative transition-all duration-300 ease-in-out">
+              <Image
+                priority={true}
+                src="/menu.svg"
+                width={25}
+                height={25}
+                alt="menu"
+                className={`${
+                  openMenu
+                    ? "hidden"
+                    : "group-hover:scale-110 transition-all duration-300 ease-in-out"
+                }`}
+              />
+              <Image
+                src="/x.svg"
+                width={25}
+                height={25}
+                alt="x"
+                className={`${
+                  openMenu
+                    ? "group-hover:scale-110 transition-all duration-300 ease-in-out"
+                    : "hidden"
+                }`}
+              />
+              <button
+                onClick={() => {
+                  handleMenu();
+                }}
+                className="z-50 absolute hidden w-16 h-16 rounded-md bg-[#FF9D23] group-hover:flex mix-blend-darken transition-all duration-300 ease-in-out"
+              />
+            </div>
           </div>
         </div>
       </div>
