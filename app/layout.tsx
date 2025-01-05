@@ -34,7 +34,7 @@ export default function RootLayout({
   };
 
   return (
-    <ClerkProvider>
+    //<ClerkProvider>
       <html lang="en">
         <head>
           <title>{String(metadata.title ?? "")}</title>
@@ -68,6 +68,6 @@ export default function RootLayout({
           <SideBar handleBgChange={handleBgChange} />
         </body>
       </html>
-    </ClerkProvider>
+    //</ClerkProvider>
   );
 }
