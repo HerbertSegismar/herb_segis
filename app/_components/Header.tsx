@@ -5,12 +5,6 @@ import Hs from "./Hs";
 import { TransLink } from "../_components/TransLink";
 import { AnimatePresence, motion } from "motion/react";
 import { usePathname } from "next/navigation";
-import {
-  SignInButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
-} from "@clerk/nextjs";
 
 export default function Header() {
   const [openMenu, setOpenMenu] = useState(false);
