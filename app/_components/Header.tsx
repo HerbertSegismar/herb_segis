@@ -60,14 +60,6 @@ export default function Header() {
             />
           </TransLink>
           <div className="flex items-center gap-10">
-            {/* <div className="bg-yellow-100 ~w-14/20 ~h-6/8 flex items-center justify-center rounded-md hover:scale-110 transition-all duration-300 ease-in-out hover:bg-[#FF9D23] font-semibold text-black hover:text-slate-300">
-              <SignedOut>
-                <SignInButton />
-              </SignedOut>
-              <SignedIn>
-                <UserButton />
-              </SignedIn>
-            </div> */}
             <div className="flex items-center justify-center h-[50px] w-[50px] right-8 group cursor-pointer relative transition-all duration-300 ease-in-out">
               <Image
                 priority={true}
