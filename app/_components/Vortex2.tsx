@@ -1,10 +1,9 @@
 import React from "react";
 import { Vortex } from "../_components/Vortex";
 
-export const Vortex2 = ({children}:{ children: React.ReactNode;
-}) => {
+export const Vortex2 = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="w-screen mx-auto rounded-md h-screen overflow-hidden">
+    <div className="w-screen mx-auto rounded-md h-screen overflow-hidden -z-80">
       <Vortex
         rangeY={400}
         particleCount={30}
@@ -15,4 +14,4 @@ export const Vortex2 = ({children}:{ children: React.ReactNode;
       </Vortex>
     </div>
   );
-}
+};

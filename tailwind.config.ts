@@ -1,6 +1,10 @@
 import type { Config } from "tailwindcss";
 import fluid, { extract, screens, fontSize } from "fluid-tailwind";
 
+const {
+  default: flattenColorPalette,
+} = require("tailwindcss/lib/util/flattenColorPalette");
+
 export default {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -11,6 +15,9 @@ export default {
     screens, // Tailwind's default screens, in `rem`
     fontSize, // Tailwind's default font sizes, in `rem` (including line heights)
     extend: {
+      boxShadow: {
+        input: `0px 2px 3px -1px rgba(0,0,0,0.1), 0px 1px 0px 0px rgba(25,28,33,0.02), 0px 0px 0px 1px rgba(25,28,33,0.08)`,
+      },
       screens: {
         xs: "20rem",
       },
@@ -63,9 +70,16 @@ export default {
     },
     extract,
   },
-  plugins: [
-    fluid({
-      checkSC144: false, // default: true
-    }),
-  ],
+  plugins: [addVariablesForColors, fluid],
 } satisfies Config;
+
+function addVariablesForColors({ addBase, theme }: any) {
+  let allColors = flattenColorPalette(theme("colors"));
+  let newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+  );
+
+  addBase({
+    ":root": newVars,
+  });
+}

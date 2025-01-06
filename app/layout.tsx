@@ -11,7 +11,8 @@ import { Vortex2 } from './_components/Vortex2'
 import { useState } from "react";
 import { metadata } from './metadata';
 import SideBar from "./_components/SideBar";
-import { ClerkProvider } from "@clerk/nextjs";
+
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -34,16 +35,16 @@ export default function RootLayout({
   };
 
   return (
-    //<ClerkProvider>
-      <html lang="en">
-        <head>
-          <title>{String(metadata.title ?? "")}</title>
-          <meta name="description" content={metadata.description ?? ""} />
-        </head>
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
-        >
-          <Header />
+    <html lang="en">
+      <head>
+        <title>{String(metadata.title ?? "")}</title>
+        <meta name="description" content={metadata.description ?? ""} />
+      </head>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} flex antialiased overflow-x-hidden`}
+      >
+        <Header />
+        <div className="absolute -z-50 overflow-hidden">
           {bgStyle === "lines" ? (
             <BackgroundLines>{children}</BackgroundLines>
           ) : bgStyle === "gradient" ? (
@@ -61,13 +62,13 @@ export default function RootLayout({
           ) : (
             <BackgroundLines>{children}</BackgroundLines>
           )}
+        </div>
 
-          <div className="w-screen h-10 bg-black relative bottom-0 left-0 text-white flex items-center justify-center">
-            <Footer />
-          </div>
-          <SideBar handleBgChange={handleBgChange} />
-        </body>
-      </html>
-    //</ClerkProvider>
+        <div className="absolute w-screen h-10 bg-black top-[100vh] left-0 text-white flex items-center justify-center">
+          <Footer />
+        </div>
+        <SideBar handleBgChange={handleBgChange} />
+      </body>
+    </html>
   );
 }

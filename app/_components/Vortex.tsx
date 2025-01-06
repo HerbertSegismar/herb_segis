@@ -17,9 +17,9 @@ interface VortexProps {
 }
 
 export const Vortex: React.FC<VortexProps> = ({
-  particleCount = 100,
-  rangeY = 100,
-  baseHue = 220,
+  particleCount = 30,
+  rangeY = 60,
+  baseHue = 80,
   baseSpeed = 0.0,
   rangeSpeed = 1.5,
   baseRadius = 1,
@@ -47,7 +47,7 @@ export const Vortex: React.FC<VortexProps> = ({
   const noise3D = createNoise3D();
   const TAU = 2 * Math.PI;
   const rand = (n: number) => n * Math.random();
-  const randRange = (n: number) => n - rand(2 * n);
+  const randRange = useCallback((n: number) => n - rand(2 * n), []);  
   const fadeInOut = (t: number, m: number) =>
     Math.abs(((t + 0.5 * m) % m) - 0.5 * m) / (0.5 * m);
   const lerp = (n1: number, n2: number, speed: number) =>
@@ -126,12 +126,12 @@ export const Vortex: React.FC<VortexProps> = ({
   const renderGlow = useCallback(
     (canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D) => {
       ctx.save();
-      ctx.filter = "blur(8px) brightness(200%)";
+      ctx.filter = "blur(4px) brightness(200%)";
       ctx.globalCompositeOperation = "lighter";
       ctx.drawImage(canvas, 0, 0);
       ctx.restore();
       ctx.save();
-      ctx.filter = "blur(4px) brightness(200%)";
+      ctx.filter = "blur(2px) brightness(200%)";
       ctx.globalCompositeOperation = "lighter";
       ctx.drawImage(canvas, 0, 0);
       ctx.restore();
@@ -224,11 +224,10 @@ export const Vortex: React.FC<VortexProps> = ({
   return (
     <div
       className={cn(
-        "h-screen w-screen relative -z-10 top-0 left-0 bg-gradient-to-r from-indigo-950 via-blue-950 to-black",
+        "h-screen w-screen absolute -z-80 top-0 left-0 bg-gradient-to-r from-indigo-950 via-blue-950 to-black",
         className
       )}
     >
-      {" "}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -238,10 +237,9 @@ export const Vortex: React.FC<VortexProps> = ({
           containerClassName
         )}
       >
-        {" "}
-        <canvas ref={canvasRef}></canvas>{" "}
-      </motion.div>{" "}
-      <div className={cn("relative z-10")}>{children}</div>{" "}
+        <canvas ref={canvasRef}></canvas>
+      </motion.div>
+      <div className={cn("relative z-10")}>{children}</div>
     </div>
   );
 };

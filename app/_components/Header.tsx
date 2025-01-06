@@ -5,12 +5,6 @@ import Hs from "./Hs";
 import { TransLink } from "../_components/TransLink";
 import { AnimatePresence, motion } from "motion/react";
 import { usePathname } from "next/navigation";
-import {
-  SignInButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
-} from "@clerk/nextjs";
 
 export default function Header() {
   const [openMenu, setOpenMenu] = useState(false);
@@ -51,94 +45,87 @@ export default function Header() {
     { name: "Services", href: "/services" },
     { name: "Gallery", href: "/gallery" },
     { name: "Contact", href: "/contact" },
+    { name: "SignUp", href: "/signup" },
   ];
 
   return (
-    <div>
-      <div className="w-screen h-24 md:h-48 flex justify-center items-center bg-[#1A1A1D] z-50">
-        <div className="flex items-center justify-between  px-1 md:px-10 w-full h-full cursor-pointer">
-          <TransLink href="/">
-            <Hs
-              onClick={() => {
-                handleMenu();
-              }}
-              className="hover:bg-black/30 p-4 rounded-lg hover:scale-110 transition-all duration-300 ease-in-out w-64 md:w-96"
-            />
-          </TransLink>
-          <div className="flex items-center gap-10">
-            {/* <div className="bg-yellow-100 ~w-14/20 ~h-6/8 flex items-center justify-center rounded-md hover:scale-110 transition-all duration-300 ease-in-out hover:bg-[#FF9D23] font-semibold text-black hover:text-slate-300">
-              <SignedOut>
-                <SignInButton />
-              </SignedOut>
-              <SignedIn>
-                <UserButton />
-              </SignedIn>
-            </div> */}
-            <div className="flex items-center justify-center h-[50px] w-[50px] right-8 group cursor-pointer relative transition-all duration-300 ease-in-out">
-              <Image
-                priority={true}
-                src="/menu.svg"
-                width={25}
-                height={25}
-                alt="menu"
-                className={`${
-                  openMenu
-                    ? "hidden"
-                    : "group-hover:scale-110 transition-all duration-300 ease-in-out"
-                }`}
-              />
-              <Image
-                src="/x.svg"
-                width={25}
-                height={25}
-                alt="x"
-                className={`${
-                  openMenu
-                    ? "group-hover:scale-110 transition-all duration-300 ease-in-out"
-                    : "hidden"
-                }`}
-              />
-              <button
+      <div>
+        <div className="w-screen h-24 md:h-48 flex justify-center items-center bg-[#1A1A1D] z-50">
+          <div className="flex items-center justify-between  px-1 md:px-10 w-full h-full cursor-pointer">
+            <TransLink href="/">
+              <Hs
                 onClick={() => {
                   handleMenu();
                 }}
-                className="z-50 absolute hidden w-16 h-16 rounded-md bg-[#FF9D23] group-hover:flex mix-blend-darken transition-all duration-300 ease-in-out"
+                className="hover:bg-black/30 p-4 rounded-lg hover:scale-110 transition-all duration-300 ease-in-out w-64 md:w-96"
               />
+            </TransLink>
+            <div className="flex items-center gap-10">
+              <div className="flex items-center justify-center h-[50px] w-[50px] right-8 group cursor-pointer relative transition-all duration-300 ease-in-out">
+                <Image
+                  priority={true}
+                  src="/menu.svg"
+                  width={25}
+                  height={25}
+                  alt="menu"
+                  className={`${
+                    openMenu
+                      ? "hidden"
+                      : "group-hover:scale-110 transition-all duration-300 ease-in-out"
+                  }`}
+                />
+                <Image
+                  src="/x.svg"
+                  width={25}
+                  height={25}
+                  alt="x"
+                  className={`${
+                    openMenu
+                      ? "group-hover:scale-110 transition-all duration-300 ease-in-out"
+                      : "hidden"
+                  }`}
+                />
+                <button
+                  onClick={() => {
+                    handleMenu();
+                  }}
+                  className="z-50 absolute hidden w-16 h-16 rounded-md bg-[#FF9D23] group-hover:flex mix-blend-darken transition-all duration-300 ease-in-out"
+                />
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div className="w-full flex items-center">
-        <AnimatePresence>
-          {openMenu && (
-            <motion.div
-              variants={divVariants}
-              initial="initial"
-              animate="final"
-              exit="exit"
-              className="absolute top-28 bg-black/50 border border-solid-2px border-black/20 rounded-xl ~w-28/44 ~h-64/96 ~mt-2/10 right-4 text-yellow-100 flex flex-col"
-            >
-              <div className="bg-[#FF9D23] ~w-2/6 ~h-2/6 rounded-full ~mt-2/4 ~ml-2/4" />
-              <div className="flex flex-col items-center justify-center w-full h-full gap-4">
-                {pages.map((page) => (
-                  <TransLink
-                    key={page.name}
-                    href={page.href}
-                    className={`~text-xl/3xl font-bold hover:text-[#FF9D23] transition-all duration-300 ease-in-out ${
-                      pathname === page.href
-                        ? "text-[#FF9D23]"
-                        : "text-yellow-100"
-                    }`}
-                  >
-                    {page.name}
-                  </TransLink>
-                ))}
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+        <div className="w-full flex items-center">
+          <AnimatePresence>
+            {openMenu && (
+              <motion.div
+                variants={divVariants}
+                initial="initial"
+                animate="final"
+                exit="exit"
+                className="absolute top-28 bg-black/50 border border-solid-2px border-black/20 rounded-xl ~w-28/44 ~h-80/96 ~mt-2/10 right-4 text-yellow-100 flex flex-col"
+              >
+                <div className="bg-[#FF9D23] ~w-4/8 ~h-4/8 rounded-full ~mt-3/4 ~ml-3/4" />
+                <div className="flex flex-col items-center justify-center w-full h-full gap-2">
+                  {pages.map((page) => (
+                    <TransLink
+                      key={page.name}
+                      href={page.href}
+                      className={`~text-lg/2xl font-bold hover:text-[#FF9D23] transition-all duration-300 ease-in-out ${
+                        pathname === page.href
+                          ? "text-[#FF9D23]"
+                          : "text-yellow-100"
+                      }`}
+                    >
+                      {page.name}
+                    </TransLink>
+                  ))}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
       </div>
-    </div>
   );
 }
