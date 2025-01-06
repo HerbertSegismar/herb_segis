@@ -11,8 +11,11 @@ import { Vortex2 } from './_components/Vortex2'
 import { useState } from "react";
 import { metadata } from './metadata';
 import SideBar from "./_components/SideBar";
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 3c7b3a16cd443406f3a5f7efcc031217b21537af
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -35,6 +38,7 @@ export default function RootLayout({
   };
 
   return (
+<<<<<<< HEAD
     <html lang="en">
       <head>
         <title>{String(metadata.title ?? "")}</title>
@@ -45,6 +49,18 @@ export default function RootLayout({
       >
         <Header />
         <div className="absolute -z-50 overflow-hidden">
+=======
+  
+      <html lang="en">
+        <head>
+          <title>{String(metadata.title ?? "")}</title>
+          <meta name="description" content={metadata.description ?? ""} />
+        </head>
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
+        >
+          <Header />
+>>>>>>> 3c7b3a16cd443406f3a5f7efcc031217b21537af
           {bgStyle === "lines" ? (
             <BackgroundLines>{children}</BackgroundLines>
           ) : bgStyle === "gradient" ? (
@@ -64,11 +80,21 @@ export default function RootLayout({
           )}
         </div>
 
+<<<<<<< HEAD
         <div className="absolute w-screen h-10 bg-black top-[100vh] left-0 text-white flex items-center justify-center">
           <Footer />
         </div>
         <SideBar handleBgChange={handleBgChange} />
       </body>
     </html>
+=======
+          <div className="w-screen h-10 bg-black relative bottom-0 left-0 text-white flex items-center justify-center">
+            <Footer />
+          </div>
+          <SideBar handleBgChange={handleBgChange} />
+        </body>
+      </html>
+    
+>>>>>>> 3c7b3a16cd443406f3a5f7efcc031217b21537af
   );
 }
