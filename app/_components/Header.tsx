@@ -49,51 +49,11 @@ export default function Header() {
   ];
 
   return (
-<<<<<<< HEAD
       <div>
         <div className="w-screen h-24 md:h-48 flex justify-center items-center bg-[#1A1A1D] z-50">
           <div className="flex items-center justify-between  px-1 md:px-10 w-full h-full cursor-pointer">
             <TransLink href="/">
               <Hs
-=======
-    <div>
-      <div className="w-screen h-24 md:h-48 flex justify-center items-center bg-[#1A1A1D] z-50">
-        <div className="flex items-center justify-between  px-1 md:px-10 w-full h-full cursor-pointer">
-          <TransLink href="/">
-            <Hs
-              onClick={() => {
-                handleMenu();
-              }}
-              className="hover:bg-black/30 p-4 rounded-lg hover:scale-110 transition-all duration-300 ease-in-out w-64 md:w-96"
-            />
-          </TransLink>
-          <div className="flex items-center gap-10">
-            <div className="flex items-center justify-center h-[50px] w-[50px] right-8 group cursor-pointer relative transition-all duration-300 ease-in-out">
-              <Image
-                priority={true}
-                src="/menu.svg"
-                width={25}
-                height={25}
-                alt="menu"
-                className={`${
-                  openMenu
-                    ? "hidden"
-                    : "group-hover:scale-110 transition-all duration-300 ease-in-out"
-                }`}
-              />
-              <Image
-                src="/x.svg"
-                width={25}
-                height={25}
-                alt="x"
-                className={`${
-                  openMenu
-                    ? "group-hover:scale-110 transition-all duration-300 ease-in-out"
-                    : "hidden"
-                }`}
-              />
-              <button
->>>>>>> 3c7b3a16cd443406f3a5f7efcc031217b21537af
                 onClick={() => {
                   handleMenu();
                 }}

@@ -188,7 +188,7 @@ const CollisionMechanism = React.forwardRef<
 
       setTimeout(() => {
         setBeamKey((prevKey) => prevKey + 1);
-      }, 2000);
+      }, 1900);
     }
   }, [collision]);
 
