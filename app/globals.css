@@ -3,29 +3,58 @@
 @tailwind utilities;
 
 :root {
-  --background: linear-gradient(40deg, #6C00A2, #001152); 
+  --background: linear-gradient(to right, #1e47b8, #131010);
+  --foreground: #ededed;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
 }
 
-/* @media (prefers-color-scheme: light) {
-  :root {
-  --background: linear-gradient(40deg, #6C00A2, #001152); 
-    --foreground: #ededed;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-  --background: linear-gradient(40deg, #6C00A2, #001152); 
-    --foreground: #ededed;
+    --background: linear-gradient(to right, #6c00a2, #001152);
+    --foreground: #eef4dc;
   }
-} */
+}
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
 
 body {
+  min-height: 100vh;
+  color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   transition-property: opacity, background-color, filter;
   transition-duration: 0.6s;
   transition-timing-function: ease-in-out;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none;
+}
+
+.container::-webkit-scrollbar {
+  width: 100%;
+  overflow: auto;
+  display: flex; 
+  flex-direction: column;
+  height: 100vh;
+}
+
+footer {
+  text-align: center;
 }
 
 .page-transition {

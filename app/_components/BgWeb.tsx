@@ -93,8 +93,7 @@ export const ParticlesContainer = ({
   return (
     <div
       className={cn(
-        "h-screen w-screen relative overflow-hidden -z-10 top-0 left-0 bg-[linear-gradient(40deg,var(--gradient-background-start),var(--gradient-background-end))]",
-        className
+        "fixed h-screen w-screen overflow-hidden -z-10 top-0 left-0"
       )}
     >
       <Particles
@@ -102,7 +101,7 @@ export const ParticlesContainer = ({
         init={particlesInit}
         loaded={particlesLoaded}
         options={particlesOptions}
-        className="absolute top-0 left-0 w-full h-full"
+        className="fixed top-0 left-0 w-full h-full"
       />
       {children}
     </div>

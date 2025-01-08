@@ -15,11 +15,11 @@ const SideBar: React.FC<SideBarProps> = ({ handleBgChange }) => {
   };
 
   return (
-    <div className="w-20 h-auto flex flex-col items-center">
+    <div className=" relative ~w-14/20 h-auto flex flex-col items-center">
       <motion.div
         animate={{ y: showSideBar ? "200vh" : 0 }}
         transition={{ duration: 1, type: "spring" }}
-        className="~w-14/20 ~h-80/96 ~left-4/10 ~top-60/96 z-50 fixed"
+        className="~w-14/16 ~h-80/96 ~left-4/10 ~top-60/96 z-50 fixed"
       >
         <div className="flex flex-col items-center justify-center w-full h-full bg-black/50 border border-solid-2px border-black/20 gap-4 rounded-full">
           <button
@@ -35,7 +35,7 @@ const SideBar: React.FC<SideBarProps> = ({ handleBgChange }) => {
             BEAMS
           </button>
           <button
-            onClick={() => handleBgChange("gradient")}
+            onClick={() => handleBgChange("floats")}
             className="bg-emerald-500 hover:bg-[#0A97B0] ~w-12/14 ~h-12/14 rounded-full text-yellow-100 text-[10px] md:text-xs flex items-center justify-center hover:scale-110 transition-all duration-300"
           >
             FLOATS
@@ -54,7 +54,7 @@ const SideBar: React.FC<SideBarProps> = ({ handleBgChange }) => {
           </button>
         </div>
       </motion.div>
-      <div>
+      <div className="absolute">
         <button
           onClick={handleShowSideBar}
           className={`fixed bottom-20 ~left-4/14 bg-black/20 hover:bg-[#0A5EB0] ~w-12/14 ~h-12/14 rounded-full text-yellow-100 text-[10px] md:text-xs flex items-center justify-center hover:scale-110 transition-all duration-300 ${

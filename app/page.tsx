@@ -1,12 +1,12 @@
-'use client';
+"use client";
 import { motion, AnimatePresence } from "motion/react";
-import { usePathname } from 'next/navigation';
+import { usePathname } from "next/navigation";
 import { TextGenerateEffect } from "./_components/TextFX";
+import Image from "next/image";
 
 export default function Home() {
-
   const pathname = usePathname();
-  
+
   const divVariants = {
     initial: {
       opacity: 0,
@@ -38,24 +38,198 @@ export default function Home() {
         animate="final"
         transition={divVariants.transition}
         exit="exit"
-        className="flex flex-col w-screen h-screen items-center "
       >
-        <TextGenerateEffect
-          words="Welcome to my Portfolio Page"
-          className="text-lg md md:text-7xl p-5 uppercase"
-        />
-        <TextGenerateEffect
-          words="WHERE DREAMS BECOME REALITY AND IDEAS COME TO LIFE.
-            IMMERSE YOURSELF IN A WORLD OF CREATIVITY AND INNOVATION.
-            LET'S CREATE SOMETHING AMAZING TOGETHER.
-            
-            IT HAS BEEN KNOWN THAT THE GREATEST IDEAS COME FROM THE MOST UNEXPECTED PLACES.
-            LET'S EXPLORE THE POSSIBILITIES TOGETHER.
-            IN A WORLD OF LIMITLESS IDEAS, THE ONLY LIMIT IS YOUR IMAGINATION.
-            WHERE WILL YOUR IMAGINATION TAKE YOU?
-            IN THE REALM OF THE UNKNOWN, THE POSSIBILITIES ARE ENDLESS."
-          className="text-sm md:text-5xl p-24"
-        />
+        <div className="~gap-2/6 grid grid-cols-4">
+          <div className="col-span-1">
+            <Image
+              width={300}
+              height={100}
+              alt=""
+              src="/lion_01.jpg"
+              className="~rounded-md/xl"
+            />
+          </div>
+          <div className="col-span-1">
+            <Image
+              width={300}
+              height={100}
+              alt=""
+              src="/lion_02.jpg"
+              className="~rounded-md/xl"
+            />
+          </div>
+          <div className="col-span-1">
+            <Image
+              width={300}
+              height={100}
+              alt=""
+              src="/fox_01.jpg"
+              className="~rounded-md/xl"
+            />
+          </div>
+          <div className="col-span-1">
+            <Image
+              width={300}
+              height={100}
+              alt=""
+              src="/tiger_01.jpg"
+              className="~rounded-md/xl"
+            />
+          </div>
+          <div className="col-span-1">
+            <Image
+              width={300}
+              height={100}
+              alt=""
+              src="/tiger_02.jpg"
+              className="~rounded-md/xl"
+            />
+          </div>
+          <div className="col-span-1">
+            <Image
+              width={300}
+              height={100}
+              alt=""
+              src="/lion_03.jpg"
+              className="~rounded-md/xl"
+            />
+          </div>
+          <div className="col-span-1">
+            <Image
+              width={300}
+              height={100}
+              alt=""
+              src="/lovers_01.jpg"
+              className="~rounded-md/xl"
+            />
+          </div>
+          <div className="col-span-1">
+            <Image
+              width={300}
+              height={100}
+              alt=""
+              src="/plant_01.jpg"
+              className="~rounded-md/xl"
+            />
+          </div>
+          <div className="col-span-1">
+            <Image
+              width={300}
+              height={100}
+              alt=""
+              src="/lion_04.jpg"
+              className="~rounded-md/xl"
+            />
+          </div>
+          <div className="col-span-1">
+            <Image
+              width={300}
+              height={100}
+              alt=""
+              src="/mountain_01.jpg"
+              className="~rounded-md/xl"
+            />
+          </div>
+          <div className="col-span-1">
+            <Image
+              width={300}
+              height={100}
+              alt=""
+              src="/mountain_02.jpg"
+              className="~rounded-md/xl"
+            />
+          </div>
+          <div className="col-span-1">
+            <Image
+              width={300}
+              height={100}
+              alt=""
+              src="/mountain_03.jpg"
+              className="~rounded-md/xl"
+            />
+          </div>
+          <div className="col-span-1">
+            <Image
+              width={300}
+              height={100}
+              alt=""
+              src="/car_01.jpg"
+              className="~rounded-md/xl"
+            />
+          </div>
+          <div className="col-span-1">
+            <Image
+              width={300}
+              height={100}
+              alt=""
+              src="/car_02.jpg"
+              className="~rounded-md/xl"
+            />
+          </div>
+          <div className="col-span-1">
+            <Image
+              width={300}
+              height={100}
+              alt=""
+              src="/car_03.jpg"
+              className="~rounded-md/xl"
+            />
+          </div>
+          <div className="col-span-1">
+            <Image
+              width={300}
+              height={100}
+              alt=""
+              src="/car_04.jpg"
+              className="~rounded-md/xl"
+            />
+          </div>
+          <div className="col-span-1">
+            <Image
+              width={300}
+              height={100}
+              alt=""
+              src="/car_05.jpg"
+              className="~rounded-md/xl"
+            />
+          </div>
+          <div className="col-span-1">
+            <Image
+              width={300}
+              height={100}
+              alt=""
+              src="/jupiter.jpg"
+              className="~rounded-md/xl"
+            />
+          </div>
+          <div className="col-span-1">
+            <Image
+              width={300}
+              height={100}
+              alt=""
+              src="/bird_01.jpg"
+              className="~rounded-md/xl"
+            />
+          </div>
+          <div className="col-span-1">
+            <Image
+              width={300}
+              height={100}
+              alt=""
+              src="/lovers_01.jpg"
+              className="~rounded-md/xl"
+            />
+          </div>
+          <div className="col-span-1">
+            <Image
+              width={300}
+              height={100}
+              alt=""
+              src="/plant_01.jpg"
+              className="~rounded-md/xl"
+            />
+          </div>
+        </div>
       </motion.div>
     </AnimatePresence>
   );

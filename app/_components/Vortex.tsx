@@ -222,24 +222,15 @@ export const Vortex: React.FC<VortexProps> = ({
   }, [handleResize, setup]);
 
   return (
-    <div
-      className={cn(
-        "h-screen w-screen absolute -z-80 top-0 left-0 bg-gradient-to-r from-indigo-950 via-blue-950 to-black",
-        className
-      )}
-    >
+    <div>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         ref={containerRef}
-        className={cn(
-          "absolute h-full w-full inset-0 z-0 bg-transparent flex items-center justify-center",
-          containerClassName
-        )}
       >
         <canvas ref={canvasRef}></canvas>
       </motion.div>
-      <div className={cn("relative z-10")}>{children}</div>
+      <div>{children}</div>
     </div>
   );
 };

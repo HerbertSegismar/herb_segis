@@ -38,9 +38,9 @@ export default function About() {
         animate="final"
         transition={divVariants.transition}
         exit="exit"
-        className="flex w-screen h-screen justify-center items-center"
+        className="flex h-screen justify-center items-center"
       >
-          <h1 className="text-2xl md:text-5xl lg:text-7xl text-yellow-100">
+          <h1 className="text-2xl md:text-5xl lg:text-7xl text-yellow-100 text-center">
             Welcome to the Services Page
           </h1>{" "}
       </motion.div>

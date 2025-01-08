@@ -2,16 +2,9 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./_components/Header";
-import Footer from "./_components/Footer";
-import { BackgroundBeamsWithCollision } from "./_components/BgBeams";
-import { BackgroundLines } from "./_components/BgLines";
-import { BackgroundGradientAnimation } from "./_components/BgGradient";
-import { ParticlesContainer } from "./_components/BgWeb";
-import { Vortex2 } from './_components/Vortex2'
 import { useState } from "react";
-import { metadata } from './metadata';
-import SideBar from "./_components/SideBar";
-
+import { metadata } from "./metadata";
+import BgSetter from "./_components/BgSetter";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,33 +34,18 @@ export default function RootLayout({
         <meta name="description" content={metadata.description ?? ""} />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} flex antialiased overflow-x-hidden`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased `}
       >
-        <Header />
-        <div className="absolute -z-50 overflow-hidden">
-          {bgStyle === "lines" ? (
-            <BackgroundLines>{children}</BackgroundLines>
-          ) : bgStyle === "gradient" ? (
-            <BackgroundGradientAnimation>
-              {children}
-            </BackgroundGradientAnimation>
-          ) : bgStyle === "beams" ? (
-            <BackgroundBeamsWithCollision>
-              {children}
-            </BackgroundBeamsWithCollision>
-          ) : bgStyle === "webs" ? (
-            <ParticlesContainer>{children}</ParticlesContainer>
-          ) : bgStyle === "vortex" ? (
-            <Vortex2>{children}</Vortex2>
-          ) : (
-            <BackgroundLines>{children}</BackgroundLines>
-          )}
+        <div className="w-screen h-screen container flex flex-col">
+          <header className="absolute top-0 left-0 z-50 flex flex-1">
+            <Header />
+          </header>
+          <div className="absolute top-56 left-0"><BgSetter/></div>
+          <div className="~mt-24/64 ~pb-12/24">{children}</div>
+          <footer className="fixed mt-10 flex w-screen text-white items-center justify-center bg-black h-10 left-0 bottom-0">
+            © herb segis 2025
+          </footer>
         </div>
-
-        <div className="absolute w-screen h-10 bg-black top-[100vh] left-0 text-white flex items-center justify-center">
-          <Footer />
-        </div>
-        <SideBar handleBgChange={handleBgChange} />
       </body>
     </html>
   );

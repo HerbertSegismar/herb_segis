@@ -17,7 +17,7 @@ export const BackgroundLines = ({
   return (
     <div
       className={cn(
-        "h-screen w-screen bg-gradient-to-b from-neutral-950 dark:to-blue-800 relative flex items-center justify-center overflow-hidden -z-10",
+        "h-screen w-screen relative flex items-center justify-center overflow-hidden -z-10",
         className
       )}
     >
@@ -98,7 +98,7 @@ const SVG = ({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
-      className="absolute inset-0 w-full h-full"
+      className="fixed inset-0 w-full h-full"
     >
       {paths.map((path, idx) => (
         <motion.path
