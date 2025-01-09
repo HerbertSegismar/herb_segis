@@ -101,7 +101,7 @@ export const BackgroundGradientAnimation = ({
   return (
     <div
       className={cn(
-        "h-screen w-screen scale-70 relative flex items-center justify-center top-[350px] left-[150px] md:top-[700px] md:left-[300px] -z-10",
+        "h-screen w-screen scale-60 absolute flex items-center justify-center top-[500px] left-0 md:top-[900px] md:left-[300px] -z-10",
         className
       )}
     >

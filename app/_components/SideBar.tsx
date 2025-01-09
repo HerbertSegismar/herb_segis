@@ -15,7 +15,7 @@ const SideBar: React.FC<SideBarProps> = ({ handleBgChange }) => {
   };
 
   return (
-    <div className=" relative ~w-14/20 h-auto flex flex-col items-center">
+    <div className="fixed ~w-14/20 h-auto flex flex-col items-center">
       <motion.div
         animate={{ y: showSideBar ? "200vh" : 0 }}
         transition={{ duration: 1, type: "spring" }}
@@ -54,10 +54,10 @@ const SideBar: React.FC<SideBarProps> = ({ handleBgChange }) => {
           </button>
         </div>
       </motion.div>
-      <div className="absolute">
+      <div>
         <button
           onClick={handleShowSideBar}
-          className={`fixed bottom-20 ~left-4/14 bg-black/20 hover:bg-[#0A5EB0] ~w-12/14 ~h-12/14 rounded-full text-yellow-100 text-[10px] md:text-xs flex items-center justify-center hover:scale-110 transition-all duration-300 ${
+          className={`fixed bottom-20 ~left-4/14 bg-black/20 hover:bg-[#0A5EB0] ~w-12/14 ~h-12/14 rounded-full text-yellow-100 text-[10px] md:text-xs flex items-center justify-center hover:scale-110 transition-all duration-300 z-50 ${
             showSideBar ? "rotate-180" : ""
           }`}
         >
