@@ -39,7 +39,7 @@ export default function Home() {
         transition={divVariants.transition}
         exit="exit"
       >
-        <div className="~gap-2/6 grid grid-cols-4">
+        <div className="~gap-2/6 grid grid-cols-4 p-2">
           <div className="col-span-1">
             <Image
               width={300}
@@ -223,7 +223,7 @@ export default function Home() {
           <div className="col-span-1">
             <Image
               width={300}
-              height={100}
+              height={600}
               alt=""
               src="/plant_01.jpg"
               className="~rounded-md/xl"

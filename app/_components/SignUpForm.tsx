@@ -15,7 +15,7 @@ export function SignupFormDemo() {
     console.log("Form submitted");
   };
   return (
-    <div className="max-w-md ~rounded-lg/2xl ~p-4/8 shadow-input bg-white dark:bg-black ~mb-20/36">
+    <div className="-z-10 max-w-md ~rounded-lg/2xl ~p-4/8 shadow-input bg-white dark:bg-black ~mb-20/36">
       <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
         Welcome to Aceternity
       </h2>

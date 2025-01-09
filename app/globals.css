@@ -24,11 +24,6 @@
   }
 }
 
-html,
-body {
-  width: 100%;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
-}
 
 body {
   min-height: 100vh;
@@ -43,14 +38,15 @@ body {
   transition-timing-function: ease-in-out;
   -ms-overflow-style: none; /* Internet Explorer 10+ */
   scrollbar-width: none;
+  overflow-x: hidden;
 }
 
 .container::-webkit-scrollbar {
   width: 100%;
-  overflow: auto;
+  overflow: scroll;
   display: flex; 
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 footer {

@@ -41,8 +41,8 @@ export default function RootLayout({
             <Header />
           </header>
           <div className="absolute top-56 left-0"><BgSetter/></div>
-          <div className="~mt-24/64 ~pb-12/24">{children}</div>
-          <footer className="fixed mt-10 flex w-screen text-white items-center justify-center bg-black h-10 left-0 bottom-0">
+          <div className="~mt-24/64 ~pb-10/24">{children}</div>
+          <footer className="fixed mt-2 flex w-screen text-white items-center justify-center bg-black h-10 left-0 bottom-0">
             © herb segis 2025
           </footer>
         </div>

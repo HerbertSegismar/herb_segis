@@ -144,7 +144,7 @@ export const BackgroundGradientAnimation = ({
             className={cn(
               `absolute [background:radial-gradient(circle_at_center,_rgba(var(--second-color),_0.8)_0,_rgba(var(--second-color),_0)_50%)_no-repeat]`,
               `[mix-blend-mode:var(--blending-value)] w-[var(--size)] h-[var(--size)] top-[calc(50%-var(--size)/2)] left-[calc(50%-var(--size)/2)]`,
-              `[transform-origin:calc(50%-400px)]`,
+              `[transform-origin:calc(50%-200px)]`,
               `animate-second`,
               `opacity-100`
             )}
@@ -153,7 +153,7 @@ export const BackgroundGradientAnimation = ({
             className={cn(
               `absolute [background:radial-gradient(circle_at_center,_rgba(var(--third-color),_0.8)_0,_rgba(var(--third-color),_0)_50%)_no-repeat]`,
               `[mix-blend-mode:var(--blending-value)] w-[var(--size)] h-[var(--size)] top-[calc(50%-var(--size)/2)] left-[calc(50%-var(--size)/2)]`,
-              `[transform-origin:calc(50%+400px)]`,
+              `[transform-origin:calc(50%+200px)]`,
               `animate-third`,
               `opacity-100`
             )}
@@ -171,7 +171,7 @@ export const BackgroundGradientAnimation = ({
             className={cn(
               `absolute [background:radial-gradient(circle_at_center,_rgba(var(--fifth-color),_0.8)_0,_rgba(var(--fifth-color),_0)_50%)_no-repeat]`,
               `[mix-blend-mode:var(--blending-value)] w-[var(--size)] h-[var(--size)] top-[calc(50%-var(--size)/2)] left-[calc(50%-var(--size)/2)]`,
-              `[transform-origin:calc(50%-800px)_calc(50%+800px)]`,
+              `[transform-origin:calc(50%-200px)_calc(50%+200px)]`,
               `animate-fifth`,
               `opacity-100`
             )}
