@@ -16,7 +16,6 @@ export const BackgroundGradientAnimation = ({
   children,
   className,
   interactive = true,
-  containerClassName,
 }: {
   gradientBackgroundStart?: string;
   gradientBackgroundEnd?: string;

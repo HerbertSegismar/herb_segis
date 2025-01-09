@@ -6,6 +6,7 @@ import { useState } from "react";
 import { metadata } from "./metadata";
 import BgSetter from "./_components/BgSetter";
 
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -50,3 +51,5 @@ export default function RootLayout({
     </html>
   );
 }
+
+

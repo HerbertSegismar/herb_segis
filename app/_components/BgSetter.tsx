@@ -1,4 +1,3 @@
-import { div, style } from "framer-motion/client";
 import React, { useState } from "react";
 import { BackgroundBeamsWithCollision } from "../_components/BgBeams";
 import { BackgroundLines } from "../_components/BgLines";
