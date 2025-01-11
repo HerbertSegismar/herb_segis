@@ -100,7 +100,7 @@ export const BackgroundGradientAnimation = ({
   return (
     <div
       className={cn(
-        "h-screen w-screen overflow-hidden absolute flex items-center justify-center -z-10 scale-y-[1.3] md:scale-[1.3]",
+        "h-screen w-screen overflow-hidden absolute flex items-center justify-center -z-10 scale-y-[1.35] md:scale-[1.3]",
         className
       )}
     >
