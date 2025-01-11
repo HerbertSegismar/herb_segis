@@ -100,7 +100,7 @@ export const BackgroundGradientAnimation = ({
   return (
     <div
       className={cn(
-        "h-screen w-screen scale-60 absolute flex items-center justify-center top-[500px] left-0 md:top-[900px] md:left-[300px] -z-10",
+        "h-screen w-screen overflow-hidden absolute flex items-center justify-center -z-10 scale-y-[1.3] md:scale-[1.3]",
         className
       )}
     >
@@ -129,10 +129,10 @@ export const BackgroundGradientAnimation = ({
           isSafari ? "blur-2xl" : "[filter:url(#blurMe)_blur(40px)]"
         )}
       >
-        <div className="-top-[800px] md:-top-[1200px] left-0 w-full h-full relative">
+        <div className="left-0 w-full h-full relative">
           <div
             className={cn(
-              `absolute [background:radial-gradient(circle_at_center,_var(--first-color)_0,_var(--first-color)_50%)_no-repeat]`,
+              `absolute`,
               `[mix-blend-mode:var(--blending-value)] w-[var(--size)] h-[var(--size)] top-[calc(50%-var(--size)/2)] left-[calc(50%-var(--size)/2)]`,
               `[transform-origin:center_center]`,
               `animate-first`,
